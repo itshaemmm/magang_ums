@@ -23,18 +23,18 @@
                         <div class="card-header bg-gradient-dark text-white rounded-top-4">
                             <h5 class="mb-0 text-white">Formulir Penggunaan Videotron</h5>
                         </div>
-                        <form action="" method="POST" class="p-4 row">
+                        <form action="{{ route('videotron.store') }}" method="POST" class="p-4 row">
                             @csrf
                             <h6 class="fw-bold">Silakan isi dengan sesuai:</h6>
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Tanggal Mulai Peminjaman</label>
-                                <input type="date" name="tanggal" class="form-control border border-2 shadow-sm px-2"
-                                    required>
+                                <input type="date" name="tanggal_mulai"
+                                    class="form-control border border-2 shadow-sm px-2" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Tanggal Selesai Peminjaman</label>
-                                <input type="date" name="tanggal" class="form-control border border-2 shadow-sm px-2"
-                                    required>
+                                <input type="date" name="tanggal_selesai"
+                                    class="form-control border border-2 shadow-sm px-2" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Kegiatan</label>
@@ -53,7 +53,9 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Link Video</label>
-                                <input type="url" name="website" class="form-control border border-2 shadow-sm px-2" placeholder="Masukkan link video (Drive/Youtube)">
+                                <input type="text" name="link_video"
+                                    class="form-control border border-2 shadow-sm px-2"
+                                    placeholder="Masukkan link video (Drive/Youtube)">
                             </div>
                             <button type="submit" class="btn bg-gradient-dark mt-2">Kirim</button>
                         </form>

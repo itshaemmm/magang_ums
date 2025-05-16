@@ -56,19 +56,19 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav mt-3">
-                        <a class="nav-link" href="/admin">
+                        <a class="nav-link" href="{{ route('admin') }}">
                             Home
                         </a>
-                        <a class="nav-link" href="/adminsic">
+                        <a class="nav-link" href="{{ route('adminsic') }}">
                             Ruang SIC
                         </a>
-                        <a class="nav-link" href="/adminvideotron">
+                        <a class="nav-link" href="{{ route('adminvideotron') }}">
                             Videotron
                         </a>
-                        <a class="nav-link" href="/adminvideotron">
+                        <a class="nav-link" href="{{ route('adminzoom') }}">
                             Zoom Meeting
                         </a>
-                        <a class="nav-link" href="/adminvideotron">
+                        <a class="nav-link" href="{{ route('adminhosting') }}">
                             Hosting
                         </a>
                         {{-- Tambahkan menu lain di sini --}}

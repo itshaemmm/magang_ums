@@ -36,7 +36,7 @@ class RuangsicController extends Controller
                 'duplicate' => 'Sudah ada jadwal yang bentrok dengan waktu tersebut.'
             ])->withInput();
         }
-
+    
         ruangsic::create([
             'tanggal' => $request->tanggal,
             'waktustart' => $request->waktustart,
@@ -64,10 +64,24 @@ class RuangsicController extends Controller
         return view('pages.adminsic', compact('data'));
     }
 
-    public function update($id){
-        $data = ruangsic::findOrFail($id);
+    public function update(Request $request, $id){
+       // Validasi data
+    $validated = $request->validate([
+        'tanggal' => 'required|date',
+        'waktustart' => 'required',
+        'waktuend' => 'required',
+        'kegiatan' => 'required|string',
+        'sector' => 'required|string',
+        'petugas' => 'required|string',
+        'tempat' => 'required|string',
+        'keterangan' => 'nullable|string',
+    ]);
 
-        return view('pages.updatesic', compact('data'));
+    // Cari dan update data
+    $ruang = \App\Models\ruangsic::findOrFail($id);
+    $ruang->update($validated);
+
+    return redirect()->back()->with('success', 'Data berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -94,5 +108,7 @@ class RuangsicController extends Controller
         'ruanganBelum' => $ruanganBelum,
     ]);
 }
+
+
 
 }

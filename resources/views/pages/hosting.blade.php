@@ -23,12 +23,12 @@
                         <div class="card-header bg-gradient-dark text-white rounded-top-4">
                             <h5 class="mb-0 text-white">Formulir Website Hosting</h5>
                         </div>
-                        <form action="" method="POST" class="p-4 row">
+                        <form action="{{ route('hosting.store') }}" method="POST" class="p-4 row">
                             @csrf
                             <h6 class="fw-bold">Silakan isi dengan sesuai:</h6>
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Nama Pihak</label>
-                                <input type="text" name="kegiatan"
+                                <input type="text" name="nama_pihak"
                                     class="form-control border border-2 shadow-sm px-2" required>
                             </div>
                             <div class="mb-3">
@@ -43,7 +43,8 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Link Github</label>
-                                <input type="url" name="website" class="form-control border border-2 shadow-sm px-2" placeholder="Masukkan link Github">
+                                <input type="text" name="link_github" class="form-control border border-2 shadow-sm px-2"
+                                    placeholder="Masukkan link Github">
                             </div>
                             <button type="submit" class="btn bg-gradient-dark mt-2">Kirim</button>
                         </form>

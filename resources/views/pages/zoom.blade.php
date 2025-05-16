@@ -21,9 +21,9 @@
                 <div class="container">
                     <div class="card rounded-4" style="box-shadow: 5px 5px 20px 1px rgba(0,0,0, 0.20)">
                         <div class="card-header bg-gradient-dark text-white rounded-top-4">
-                            <h5 class="mb-0 text-white">Formulir Website Hosting</h5>
+                            <h5 class="mb-0 text-white">Formulir Zoom Meeting</h5>
                         </div>
-                        <form action="" method="POST" class="p-4 row">
+                        <form action="{{ route('zoom.store') }}" method="POST" class="p-4 row">
                             @csrf
                             <h6 class="fw-bold">Silakan isi dengan sesuai:</h6>
                             <div class="mb-3">
@@ -33,13 +33,13 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Waktu</label>
-                                <input type="time" name="waktustart"
-                                    class="form-control border border-2 shadow-sm px-2" required>
+                                <input type="time" name="waktu" class="form-control border border-2 shadow-sm px-2"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Nama Pihak</label>
-                                <input type="text" name="kegiatan"
-                                    class="form-control border border-2 shadow-sm px-2" required>
+                                <input type="text" name="nama" class="form-control border border-2 shadow-sm px-2"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Leading Sector</label>
