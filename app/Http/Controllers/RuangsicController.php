@@ -93,10 +93,11 @@ class RuangsicController extends Controller
 
     public function index2()
     {
-        $data = ruangsic::all()->filter(function ($item) {
-            $waktuSelesai = Carbon::parse($item->tanggal . ' ' . $item->waktuend);
-            return $waktuSelesai->isFuture(); // hanya ambil yang BELUM lewat
-        });
+        $data = ruangsic::all();
+        // $data = ruangsic::all()->filter(function ($item) {
+        //     // $waktuSelesai = Carbon::parse($item->tanggal . ' ' . $item->waktuend);
+        //     // return $waktuSelesai->isFuture(); // hanya ambil yang BELUM lewat
+        // });
 
         return view('pages.main', compact('data'));
     }
